@@ -57,27 +57,8 @@ public class Stab2 extends Fragment {
         lv5 = (ListView)rootView.findViewById(R.id.lv5);
         lv5.setAdapter(adapter);
 
-
-
-
-
-
-        //   String[] buffer = new String[100] ;
-        // int i = 0 ;
-        // while (res.moveToNext() && i < 100) {
-        //   buffer[i] = res.getString(1);
-        // ++i;
-        //}
-
-
-
-
         return rootView;
     }
-
-    // Show all data
-
-
 
 }
 

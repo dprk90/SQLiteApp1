@@ -38,12 +38,13 @@ public class Tab1 extends Fragment {
 
             }
         }
-        Log.e("kyuhig",""+i);
-
-        String[] n = new String[i] ;
+        Log.e("count of items",""+i);
         int[] p = new int[i] ;
         int[] q = new int[i] ;
+
+        String[] n = new String[i] ;
         i = 0 ;
+
 
         res.moveToFirst();
         while(res.moveToNext())

@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
+import static java.security.AccessController.getContext;
+
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "freshleafy.db";
@@ -47,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_5,category);
         contentValues.put(COL_6,sub_category);
         long result = db.insert(TABLE_NAME,null ,contentValues);
-        Log.e("insert",""+name);
+        Log.e("insert",""+result+"");
 
     }
 
@@ -74,9 +76,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_2,name);
         contentValues.put(COL_3,price);
         contentValues.put(COL_4,quantity);
-        db.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
+        int x=db.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
+        Log.e("updated or not",""+x);
         return true;
     }
+
+    public void reset(String id,int quantity) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+
+        contentValues.put(COL_4,quantity);
+
+        db.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
+
+    }
+
 
 
 }

@@ -3,6 +3,7 @@ package com.example.dell.sqliteapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,7 +12,6 @@ public class Category extends AppCompatActivity {
     TextView cat1 ,cat2 ;
     DatabaseHelper myDb;
     Button menu ;
-    String a ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +47,6 @@ public class Category extends AppCompatActivity {
                 startActivity(k);
             }
         });
-
-        if(myDb.QueryNumEntries()<101)
-        {
-            for(int i=0;i<101;++i)
-            {
-                int price = (int)(Math.random()*100 + 1);
-                int cat = (int)(Math.random()*2+1);
-                int subcat = (int)(Math.random()*3+1);
-                myDb.insertData("A"+i,price,0,cat,subcat);
-
-            }
-        }
-
 
 
     }

@@ -59,27 +59,8 @@ public class Tab2 extends Fragment {
         lv2 = (ListView)rootView.findViewById(R.id.lv2);
         lv2.setAdapter(adapter);
 
-
-
-
-
-
-        //   String[] buffer = new String[100] ;
-        // int i = 0 ;
-        // while (res.moveToNext() && i < 100) {
-        //   buffer[i] = res.getString(1);
-        // ++i;
-        //}
-
-
-
-
         return rootView;
     }
-
-    // Show all data
-
-
 
 }
 

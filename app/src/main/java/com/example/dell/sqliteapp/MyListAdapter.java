@@ -76,15 +76,7 @@ public class MyListAdapter extends ArrayAdapter<String>
                 {
                     if(res.getString(1).equals(progNames[position]))
                     {
-
-
-                        boolean up = myDb.updateData(Integer.toString(c),progNames[position],  prices[position], quantity[position]);
-                        if(up==true)
-                        {
-                            Log.e("update data - ",""+c);
-
-                        }
-
+                        boolean up = myDb.updateData(Integer.toString(2+c),progNames[position],  prices[position], quantity[position]);
                     }
                     ++c ;
                 }
@@ -98,30 +90,17 @@ public class MyListAdapter extends ArrayAdapter<String>
                 q.setText(Integer.toString(quantity[position]));
                 res.moveToFirst();
                 int c = 0 ;
-                while(res.moveToNext())
+                while(res.moveToNext() && c<100)
                 {
                     if(res.getString(1).equals(progNames[position]))
                     {
-
-                        boolean up = myDb.updateData(Integer.toString(c),progNames[position],  prices[position], quantity[position]);
-                        if(up==true)
-                        {
-                            Log.e("update data + ",""+c);
-
-                        }
-
-
+                        boolean up = myDb.updateData(Integer.toString(c+2),progNames[position],  prices[position], quantity[position]);
                     }
                     ++c ;
                 }
 
             }
         });
-
-
-
-
-
         return rowView ;
     }
 }
